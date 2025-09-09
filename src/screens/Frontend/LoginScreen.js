@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
 import BottomLine from "../../components/BottomLine";
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     const [phone, setPhone] = useState("");
     const [focused, setFocused] = useState(false);
 
+      const handleContinue = () => {
+        // Aap chahe to phone number validate kar sakte ho
+        navigation.navigate("Otp"); // OTP screen par navigate
+    };
     return (
         <View style={styles.container}>
             {/* Logo */}
@@ -30,8 +34,7 @@ const LoginScreen = () => {
                         onBlur={() => setFocused(false)}
                     />
                 </View>
-
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={handleContinue}>
                     <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
