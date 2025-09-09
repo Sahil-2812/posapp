@@ -2,10 +2,11 @@ import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import BottomLine from "../../components/BottomLine";
 
-const Signup2 = () => {
+const Signup2 = ({ navigation }) => { 
   const handleContinue = () => {
     // Handle contact support action
     console.log("Contact support pressed");
+    navigation.navigate("Home"); // Navigate to Home screen
   };
 
   return (
