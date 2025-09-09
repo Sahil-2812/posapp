@@ -7,7 +7,7 @@ const SplashScreen = ({ navigation }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace("Login");
-        }, 1000);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, [navigation]);

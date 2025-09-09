@@ -17,15 +17,15 @@ const OtpScreen = ({ navigation }) => {
             inputs.current[index + 1].focus();
         }
     };
-const handleContinue = () => {
-    // OTP validation logic yaha add karo
-    const enteredOtp = otp.join("");
-    console.log("Entered OTP:", enteredOtp);
 
-    // Navigate to Signup screen
-    navigation.navigate("Signup"); // yaha "Signup" aapke SignupScreen ka naam hai jo Stack me registered hai
-};
+    const handleContinue = () => {
+        // OTP validation logic yaha add karo
+        const enteredOtp = otp.join("");
+        console.log("Entered OTP:", enteredOtp);
 
+        // Navigate to Signup screen
+        navigation.navigate("Signup"); // yaha "Signup" aapke SignupScreen ka naam hai jo Stack me registered hai
+    };
 
     return (
         <View style={styles.container}>
@@ -34,7 +34,6 @@ const handleContinue = () => {
             <Text style={styles.label}>Enter 4-digits code sent to your number</Text>
 
             <View style={styles.otpWrapper}>
-
                 {otp.map((value, index) => (
                     <View key={index} style={styles.inputContainer}>
                         <TextInput
@@ -43,7 +42,10 @@ const handleContinue = () => {
                             onChangeText={(text) => handleChange(text, index)}
                             keyboardType="number-pad"
                             maxLength={1}
-                            style={styles.input}
+                            style={[
+                                styles.input,
+                                focusedIndex === index && styles.inputFocused,
+                            ]}
                             textAlign="center"
                             onFocus={() => setFocusedIndex(index)}
                             onBlur={() => setFocusedIndex(null)}
@@ -85,32 +87,39 @@ const styles = StyleSheet.create({
         marginTop: 40,
     },
     label: {
-        fontFamily: "Inter",         // font-family Inter
-        fontWeight: "600",           // semi-bold
-        fontSize: 16,                // 16px
-        lineHeight: 16,              // 100% of font size
-        letterSpacing: 0,            // 0%
+        fontFamily: "Inter",
+        fontWeight: "600",
+        fontSize: 16,
+        lineHeight: 16,
+        letterSpacing: 0,
         color: "#09111F",
-        width: 335,                  // fixed width from Figma
-        height: 19,                  // fixed height from Figma
-        textAlignVertical: "center", // vertical-align middle
-        opacity: 1,                  // fully visible
-        marginTop: 130,               // optional spacing from image
-        marginBottom: 20,            // spacing before OTP inputs
+        width: 335,
+        height: 19,
+        textAlignVertical: "center",
+        opacity: 1,
+        marginTop: 130,
+        marginBottom: 20,
     },
     otpWrapper: {
         flexDirection: "row",
         justifyContent: "space-between",
         width: "80%",
-        marginBottom: 30, // Button ke liye thodi space
+        marginBottom: 30,
     },
     inputContainer: {
         width: 50,
         alignItems: "center",
     },
     input: {
-        fontSize: 20,
-        height: 50,
+        fontSize: 28,          // Bigger font size for OTP input
+        height: 60,            // Taller input field
+        width: 60,             // Equal width for each input field
+        borderRadius: 8,       // Rounded corners for inputs
+        borderWidth: 2,        // Border thickness
+        borderColor: "#dcdcdc", // Default border color
+    },
+    inputFocused: {
+        borderColor: "#2D328E", // Border color when focused
     },
     underline: {
         width: "100%",
@@ -120,12 +129,12 @@ const styles = StyleSheet.create({
         borderRadius: 1,
     },
     underlineFocused: {
-        backgroundColor: "#2D328E",
+        backgroundColor: "#2D328E", // Change to blue when focused
     },
     button: {
         backgroundColor: "#2D328E",
-        paddingVertical: 10,
-        paddingHorizontal: 8,
+        paddingVertical: 12,
+        paddingHorizontal: 20,
         borderRadius: 8,
         marginTop: 20,
     },
