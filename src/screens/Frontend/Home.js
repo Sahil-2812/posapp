@@ -143,11 +143,7 @@ const styles = StyleSheet.create({
          marginRight: 10,
     },
     deliveryText: {
-<<<<<<< HEAD
         fontSize: 16,
-=======
-        fontSize: 16, 
->>>>>>> 374a12bca958ebc2dc17dc09b3e238fb2d91d089
         fontWeight: '600',
         textAlign: 'center',
         lineHeight: 20, 
