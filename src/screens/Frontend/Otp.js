@@ -19,12 +19,11 @@ const OtpScreen = ({ navigation }) => {
     };
 
     const handleContinue = () => {
-        // OTP validation logic yaha add karo
         const enteredOtp = otp.join("");
         console.log("Entered OTP:", enteredOtp);
 
         // Navigate to Signup screen
-        navigation.navigate("Signup"); // yaha "Signup" aapke SignupScreen ka naam hai jo Stack me registered hai
+        navigation.navigate("Signup");
     };
 
     return (
@@ -111,15 +110,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     input: {
-        fontSize: 28,          // Bigger font size for OTP input
-        height: 60,            // Taller input field
-        width: 60,             // Equal width for each input field
-        borderRadius: 8,       // Rounded corners for inputs
-        borderWidth: 2,        // Border thickness
-        borderColor: "#dcdcdc", // Default border color
+        fontSize: 28,          
+        height: 60,           
+        width: 60,         
+        borderRadius: 8,       
+        borderWidth: 2,        
+        borderColor: "#dcdcdc",
     },
     inputFocused: {
-        borderColor: "#2D328E", // Border color when focused
+        borderColor: "#2D328E", 
     },
     underline: {
         width: "100%",
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
         borderRadius: 1,
     },
     underlineFocused: {
-        backgroundColor: "#2D328E", // Change to blue when focused
+        backgroundColor: "#2D328E",
     },
     button: {
         backgroundColor: "#2D328E",

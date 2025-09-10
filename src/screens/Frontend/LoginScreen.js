@@ -7,7 +7,6 @@ const LoginScreen = ({navigation}) => {
     const [focused, setFocused] = useState(false);
 
       const handleContinue = () => {
-        // Aap chahe to phone number validate kar sakte ho
         navigation.navigate("Otp"); // OTP screen par navigate
     };
     return (
@@ -20,7 +19,6 @@ const LoginScreen = ({navigation}) => {
                 <Text style={styles.label}>Enter your Phone number</Text>
 
                 <View style={styles.inputWrapper}>
-                    {/* Prefix always bold */}
                     <Text style={styles.prefix}>+92</Text>
 
                     {/* User Input */}
@@ -82,30 +80,30 @@ const styles = StyleSheet.create({
         paddingHorizontal: 12,
         marginBottom: 32,
         paddingVertical: 8,
-        gap: 2, // thoda gap between prefix and input
+        gap: 2, 
     },
     prefix: {
         fontSize: 16,
         color: "#000",
-        fontWeight: "900", // always bold
+        fontWeight: "900",
         marginRight: 6,
     },
     input: {
         flex: 1,
         fontSize: 16,
         lineHeight: 18,
-        fontWeight: "300",                // user input light
+        fontWeight: "300",               
         paddingVertical: 10,
         marginTop: 5,
         color: "#475569",
         borderRadius: 4,
-        paddingVertical: 0,      // vertical padding remove kar diya
+        paddingVertical: 0,  
         marginTop: 3,
         includeFontPadding: false,
     },
     inputFocused: {
-        fontWeight: "200",                // focus pe thoda bold
-        color: "#2D328E",                 // focus pe dark color
+        fontWeight: "200",             
+        color: "#2D328E",                 
     },
     button: {
         backgroundColor: "#2D328E",

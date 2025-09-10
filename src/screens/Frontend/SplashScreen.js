@@ -15,7 +15,7 @@ const SplashScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image
-                source={require("../../assets/splash.png")} // apni image ka path
+                source={require("../../assets/splash.png")} 
                 style={styles.logo}
             />
             {/* Bottom decorative line */}

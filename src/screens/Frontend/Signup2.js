@@ -4,14 +4,12 @@ import BottomLine from "../../components/BottomLine";
 
 const Signup2 = ({ navigation }) => { 
   const handleContinue = () => {
-    // Handle contact support action
     console.log("Contact support pressed");
     navigation.navigate("Home"); // Navigate to Home screen
   };
 
   return (
     <View style={styles.container}>
-      {/* Main content container with border and margin */}
       <View style={styles.contentContainer}>
         <Image 
           source={require("../../assets/bottle.png")} 

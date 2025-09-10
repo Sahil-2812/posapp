@@ -130,28 +130,28 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         marginLeft: 20,
-        justifyContent: 'space-between', // Distribute space between text and image
+        justifyContent: 'space-between', 
         borderWidth: 1,
         borderColor: '#dcdcdc',
         borderRadius: 8,
-        padding: 10, // Reduced padding for better spacing
+        padding: 10, 
        
     },
     deliveryTextContainer: {
         alignItems: 'center',
-        marginTop: 15, // Added margin to push text down
+        marginTop: 15, 
          marginRight: 10,
     },
     deliveryText: {
-        fontSize: 16, // Slightly reduced font size
+        fontSize: 16,
         fontWeight: '600',
         textAlign: 'center',
-        lineHeight: 20, // Added line height for better spacing
+        lineHeight: 20, 
     },
     deliveryImage: {
-        width: '100%', // Reduced width
+        width: '100%', 
         height: 100,
-        marginBottom: 15, // Added margin to push image up
+        marginBottom: 15, 
     },
     statsContainer: {
         flex: 1,
@@ -167,14 +167,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginVertical: 4,
         alignItems: 'center',
-        width: '100%', // Make stat boxes full width
+        width: '100%', 
     },
     statValue: {
         fontSize: 24,
         fontWeight: 'bold',
     },
     statLabel: {
-        fontSize: 12, // Slightly reduced font size
+        fontSize: 12, 
         color: '#888',
         textAlign: 'center',
     },
