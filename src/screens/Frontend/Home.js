@@ -1,8 +1,11 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import React, { useEffect } from "react";
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, } from 'react-native';
 import BottomLine from "../../components/BottomLine";
+import { useNavigation } from "@react-navigation/native";
 
-const App = () => {
+const Home = () => {
+
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scrollContainer}>
@@ -10,13 +13,17 @@ const App = () => {
                     <Text style={styles.greeting}>Hello, Ahmad 👋</Text>
                     <Text style={styles.date}>Wednesday, 3 Sept 2025</Text>
 
-                    
+
                 </View>
 
-                
+
 
                 <View style={styles.rowContainer}>
-                    <View style={styles.deliveryRequestContainer}>
+                    {/* ✅ Wrap this in TouchableOpacity */}
+                    <TouchableOpacity
+                        style={styles.deliveryRequestContainer}
+                        onPress={() => navigation.navigate("WaterRequest")}
+                    >
                         <View style={styles.deliveryTextContainer}>
                             <Text style={styles.deliveryText}>Request Water</Text>
                             <Text style={styles.deliveryText}>Delivery</Text>
@@ -26,8 +33,8 @@ const App = () => {
                             style={styles.deliveryImage}
                             resizeMode="contain"
                         />
-                    </View>
-
+                    </TouchableOpacity>
+                    
                     <View style={styles.statsContainer}>
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>08</Text>
@@ -76,26 +83,39 @@ const App = () => {
                 <TouchableOpacity style={styles.navItem}>
                     <Image
                         source={require("../../assets/home.png")}
-                        style={styles.navIcon} />
+                        style={styles.navIcon}
+                    />
+                    <Text style={styles.navLabel1}>Home</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Image
-                        source={require("../../assets/wallet.png")}
-                        style={styles.navIcon} />
-                </TouchableOpacity>
+
                 <TouchableOpacity style={styles.navItem}>
                     <Image
                         source={require("../../assets/order.png")}
-                        style={styles.navIcon} />
+                        style={styles.navIcon}
+                    />
+                    <Text style={styles.navLabel}>Order</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity style={styles.navItem}>
+                    <Image
+                        source={require("../../assets/wallet.png")}
+                        style={styles.navIcon}
+                    />
+                    <Text style={styles.navLabel}>My Wallet</Text>
+                </TouchableOpacity>
+
                 <TouchableOpacity style={styles.navItem}>
                     <Image
                         source={require("../../assets/profile.png")}
-                        style={styles.navIcon} />
+                        style={styles.navIcon}
+                    />
+                    <Text style={styles.navLabel}>Profile</Text>
                 </TouchableOpacity>
             </View>
-             {/* Bottom decorative line */}
+
+            {/* Bottom decorative line */}
             <BottomLine bottom={10} />
+
         </View>
     );
 };
@@ -130,28 +150,28 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         marginLeft: 20,
-        justifyContent: 'space-between', 
+        justifyContent: 'space-between',
         borderWidth: 1,
         borderColor: '#dcdcdc',
         borderRadius: 8,
-        padding: 10, 
-       
+        padding: 10,
+
     },
     deliveryTextContainer: {
         alignItems: 'center',
-        marginTop: 15, 
-         marginRight: 10,
+        marginTop: 15,
+        marginRight: 10,
     },
     deliveryText: {
         fontSize: 16,
         fontWeight: '600',
         textAlign: 'center',
-        lineHeight: 20, 
+        lineHeight: 20,
     },
     deliveryImage: {
-        width: '100%', 
+        width: '100%',
         height: 100,
-        marginBottom: 15, 
+        marginBottom: 15,
     },
     statsContainer: {
         flex: 1,
@@ -167,14 +187,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginVertical: 4,
         alignItems: 'center',
-        width: '100%', 
+        width: '100%',
     },
     statValue: {
         fontSize: 24,
         fontWeight: 'bold',
     },
     statLabel: {
-        fontSize: 12, 
+        fontSize: 12,
         color: '#888',
         textAlign: 'center',
     },
@@ -203,6 +223,8 @@ const styles = StyleSheet.create({
         borderColor: '#dcdcdc',
         borderRadius: 8,
         marginRight: 20,
+        marginBottom: 19,
+
     },
     activityText: {
         fontSize: 16,
@@ -219,18 +241,35 @@ const styles = StyleSheet.create({
     navBar: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        padding: 10,
+        padding: 20,
         borderTopWidth: 1,
         borderTopColor: '#ddd',
+
     },
     navItem: {
         alignItems: 'center',
-        height: 40,
+        justifyContent: 'center',
+        flex: 1,           // so all items share equal space
+        paddingVertical: 4
     },
     navIcon: {
-        width: 30,
-        height: 30,
+        width: 24,
+        height: 24,
+    },
+
+    navLabel: {
+        fontSize: 10,
+        color: '#000',   // you can change color
+        marginTop: 3,
+        textAlign: 'center',
+    },
+    navLabel1: {
+        fontSize: 10,
+        color: '#1e2498ff',
+        marginTop: 3,
+        textAlign: 'center',
+
     },
 });
 
-export default App;
+export default Home;
