@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, } from 'react-native';
 import BottomLine from "../../components/BottomLine";
-import { useNavigation } from "@react-navigation/native";
 
-const Home = () => {
+const Home = ({navigation}) => {
 
-    const navigation = useNavigation();
+
+
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scrollContainer}>
@@ -19,10 +19,9 @@ const Home = () => {
 
 
                 <View style={styles.rowContainer}>
-                    {/* ✅ Wrap this in TouchableOpacity */}
                     <TouchableOpacity
                         style={styles.deliveryRequestContainer}
-                        onPress={() => navigation.navigate("WaterRequest")}
+                        onPress={() => navigation.navigate("WaterRequest")}  // 👈 ab yeh chalega
                     >
                         <View style={styles.deliveryTextContainer}>
                             <Text style={styles.deliveryText}>Request Water</Text>
@@ -34,7 +33,8 @@ const Home = () => {
                             resizeMode="contain"
                         />
                     </TouchableOpacity>
-                    
+
+
                     <View style={styles.statsContainer}>
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>08</Text>

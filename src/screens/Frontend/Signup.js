@@ -114,7 +114,7 @@ const SignupScreen = ({ navigation }) => {
               onPress={() => setShowConfirmPassword(!showConfirmPassword)}
             >
               <Icon
-                name={showConfirmPassword ? "eye" : "eye-off"}
+                name={showConfirmPassword ? "eye-outline" : "eye-off"}
                 size={22}
                 color="#2D328E"
               />

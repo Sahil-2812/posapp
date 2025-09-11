@@ -9,6 +9,8 @@ import SignupScreen from "./src/screens/Frontend/Signup";
 import Signup2 from "./src/screens/Frontend/Signup2";
 import Home from "./src/screens/Frontend/Home";
 import WaterRequest from "./src/screens/Frontend/WaterRequest";
+import Submitted from "./src/screens/Frontend/Submitted";
+import SelectWater from "./src/screens/Frontend/SelectWater";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +28,8 @@ export default function App() {
         <Stack.Screen name="Signup2" component={Signup2} />
            <Stack.Screen name="Home" component={Home} />
            <Stack.Screen name="WaterRequest" component={WaterRequest} />
+           {/* <Stack.Screen name="SelectWater" component={SelectWater} /> */}
+            <Stack.Screen name="Submitted" component={Submitted} />
 
       </Stack.Navigator>
     </NavigationContainer>
